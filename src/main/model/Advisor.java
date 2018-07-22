@@ -1,15 +1,18 @@
 package main.model;
 
+import java.util.Arrays;
+
 public class Advisor extends Person {
 	
 	private Customer[] customers;
+	
 	private Double totalTransactionAmount;
 	private static Long countId = 0L;
 	
 	public Advisor() {
 		countId++;
 		this.setId(countId);
-	}
+	}	
 
 	public Customer[] getCustomers() {
 		return customers;
@@ -26,4 +29,11 @@ public class Advisor extends Person {
 	public void setTotalTransactionAmount(Double totalTransactionAmount) {
 		this.totalTransactionAmount = totalTransactionAmount;
 	}
+	
+	@Override
+	public String toString() {
+		return "Advisor [customers=" + Arrays.toString(customers) + ", totalTransactionAmount=" + totalTransactionAmount
+				+ ", Person=" + super.toString() + "]";
+	}
+
 }

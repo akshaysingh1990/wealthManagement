@@ -1,5 +1,7 @@
 package main.model;
 
+import java.util.Arrays;
+
 public class Customer extends Person {
 
 	private Double totalAmount;
@@ -28,6 +30,12 @@ public class Customer extends Person {
 
 	public void setAdvisor(Advisor advisor) {
 		this.advisor = advisor;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [totalAmount=" + totalAmount + ", accounts=" + Arrays.toString(accounts) + ", advisor="
+				+ advisor.toString() + ", Person=" + super.toString() + "]";
 	}
 
 }

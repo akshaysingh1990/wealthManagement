@@ -5,6 +5,9 @@ import main.service.CustomerService;
 
 public class WealthManagement {
 
+	private static AdvisorService advisorService = new AdvisorService();
+	private static CustomerService customerService = new CustomerService();
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -15,8 +18,10 @@ public class WealthManagement {
 		//
 //		CustomerService customerService = new CustomerService();
 //		customerService.create();
-		AdvisorService advisorService = new AdvisorService();
 		advisorService.create();
+		customerService.create();
+		
+		
  	}
 
 }

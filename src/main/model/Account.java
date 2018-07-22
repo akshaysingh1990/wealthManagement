@@ -2,9 +2,10 @@ package main.model;
 
 public class Account {
 
+	public enum AccountType  {SAVINGS , CURRENT};
 	private Long id;
 	private String bankName;
-	private String accountType;
+	private AccountType accountType;
 	private Double amount;
 
 	public Long getId() {
@@ -23,19 +24,25 @@ public class Account {
 		this.bankName = bankName;
 	}
 
-	public String getAccountType() {
-		return accountType;
-	}
-
-	public void setAccountType(String accountType) {
-		this.accountType = accountType;
-	}
-
 	public Double getAmount() {
 		return amount;
 	}
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public AccountType getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(AccountType accountType) {
+		this.accountType = accountType;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", bankName=" + bankName + ", accountType=" + accountType + ", amount=" + amount
+				+ "]";
 	}
 }
