@@ -5,13 +5,14 @@ import java.util.Arrays;
 public class Advisor extends Person {
 	
 	private Customer[] customers;
-	
-	private Double totalTransactionAmount;
+	Double totalTransactionAmount;
 	private static Long countId = 0L;
 	
-	public Advisor() {
+	
+	public Advisor(int length) {
 		countId++;
 		this.setId(countId);
+		customers = new Customer[length];
 	}	
 
 	public Customer[] getCustomers() {

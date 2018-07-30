@@ -3,14 +3,15 @@ package main.service;
 import java.util.Scanner;
 
 import main.model.Advisor;
+import main.utils.WealthUtils;
 
 public class AdvisorService implements CommonService {
 
-	static Advisor[]  advisors = new Advisor[10];
+	Advisor[]  advisors = new Advisor[10];
 	
 	@Override
 	public void create() {
-		Advisor advisor = new Advisor();
+		Advisor advisor = new Advisor(5);
 		System.out.println("==========Add Advisor=======");
 		System.out.println("Enter Name");
 		
@@ -23,7 +24,7 @@ public class AdvisorService implements CommonService {
 		advisor.setAge(age);
 
 		System.out.println(advisor);
-		advisors[convertAdvisorIdFromLongToInt(advisor.getId())] = advisor;
+		advisors[wealthUtils.convertLongToInt((advisor.getId()))] = advisor;
 	}
 
 	@Override
@@ -33,12 +34,7 @@ public class AdvisorService implements CommonService {
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {
-		
-		return advisors[convertAdvisorIdFromLongToInt(advisorId)];
+		return advisors[wealthUtils.convertLongToInt(advisorId)];
 	}
 	
-	private int convertAdvisorIdFromLongToInt(Long id) {
-		return (int) (long)id;
-	}
-
 }

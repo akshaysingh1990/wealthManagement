@@ -8,9 +8,13 @@ import main.model.Customer;
 
 public class CustomerService implements CommonService{
 
-	private AdvisorService advisorService = new AdvisorService();
+	private AdvisorService advisorService ; 
 	private AccountService accountService = new AccountService();
  	
+	public CustomerService(AdvisorService advisorService_parameter) {
+		advisorService = advisorService_parameter;
+	}
+
 	@Override
 	public void create() {
 		
@@ -36,7 +40,20 @@ public class CustomerService implements CommonService{
 		Account account = accountService.create(customer.getId());
 		accounts[0] = account;
 		customer.setAccounts(accounts);
+		Double totalAmount = 0.0d;
+		for(Account singleAccount : accounts) {
+			if(singleAccount != null) {
+				totalAmount = totalAmount + singleAccount.getAmount();
+			}
+		}
+		customer.setTotalAmount(totalAmount);
 		
+		//update customer in advisor
+		Customer[] customers = advisor.getCustomers();
+		customers[wealthUtils.convertLongToInt(customer.getId())] = customer;
+		advisor.setCustomers(customers);
+		System.out.println(advisor);
+		System.out.println("=================");
 		System.out.println(customer);
 	}
 

@@ -7,6 +7,12 @@ public class Customer extends Person {
 	private Double totalAmount;
 	private Account[] accounts;
 	private Advisor advisor;
+	private Long countId = 0L;
+
+	public Customer() {
+		countId++;
+		this.setId(countId);
+	}
 
 	public Double getTotalAmount() {
 		return totalAmount;
@@ -35,7 +41,7 @@ public class Customer extends Person {
 	@Override
 	public String toString() {
 		return "Customer [totalAmount=" + totalAmount + ", accounts=" + Arrays.toString(accounts) + ", advisor="
-				+ advisor.toString() + ", Person=" + super.toString() + "]";
+				+ advisor.getName() + ", Person=" + super.toString() + "]";
 	}
 
 }

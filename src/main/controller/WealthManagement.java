@@ -6,7 +6,7 @@ import main.service.CustomerService;
 public class WealthManagement {
 
 	private static AdvisorService advisorService = new AdvisorService();
-	private static CustomerService customerService = new CustomerService();
+	private static CustomerService customerService = new CustomerService(advisorService);
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
