@@ -7,7 +7,7 @@ import main.utils.WealthUtils;
 
 public class AdvisorService implements CommonService {
 
-	Advisor[]  advisors = new Advisor[10];
+	public Advisor[]  advisors = new Advisor[10];
 	
 	@Override
 	public void create() {
