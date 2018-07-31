@@ -42,6 +42,7 @@ public class CustomerService implements CommonService {
 		customer.setAccounts(accounts);
 		Double totalAmount = 0.0d;
 		for (Account singleAccount : accounts) {
+
 			if (singleAccount != null) {
 				totalAmount = totalAmount + singleAccount.getAmount();
 			}
@@ -56,8 +57,8 @@ public class CustomerService implements CommonService {
 		// update total transaction amount of advisor
 		Double totalTransactionAmount = 0.0d;
 		for (Customer singleCustomer : customers) {
-			if(singleCustomer !=null)
-			totalTransactionAmount = totalTransactionAmount + singleCustomer.getTotalAmount();
+			if (singleCustomer != null)
+				totalTransactionAmount = totalTransactionAmount + singleCustomer.getTotalAmount();
 		}
 		advisor.setTotalTransactionAmount(totalTransactionAmount);
 		System.out.println(advisor);
@@ -67,8 +68,15 @@ public class CustomerService implements CommonService {
 	public void viewAll() {
 
 		// view all customer with total amount
-		
-		System.out.println("customer");
+		Advisor[] advisors = advisorService.advisors;
+
+		System.out.println("Name	    Age	 Amount  Advisor");
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 2; j++) {
+				System.out.println(advisors[i].customers[j].getName() + "   " + advisors[i].customers[j].getAge()
+						+ "     " + advisors[i].customers[j].getTotalAmount() + "   " + advisors[i].getName());
+			}
+		}
 	}
 
 }
