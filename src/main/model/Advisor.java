@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Advisor extends Person {
 	
-	public Customer[] customers;
-	Double totalTransactionAmount;
+	private Customer[] customers;
+	private Double totalTransactionAmount = 0.0;
 	private static Long countId = 0L;
 	
 	

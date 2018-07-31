@@ -6,7 +6,7 @@ public class Account {
 	private Long id;
 	private String bankName;
 	private AccountType accountType;
-	private Double amount;
+	private Double amount = 0.0d;
 
 	public Long getId() {
 		return id;

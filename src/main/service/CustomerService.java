@@ -61,7 +61,7 @@ public class CustomerService implements CommonService {
 				totalTransactionAmount = totalTransactionAmount + singleCustomer.getTotalAmount();
 		}
 		advisor.setTotalTransactionAmount(totalTransactionAmount);
-		System.out.println(advisor);
+		// System.out.println(advisor);
 	}
 
 	@Override
@@ -71,10 +71,17 @@ public class CustomerService implements CommonService {
 		Advisor[] advisors = advisorService.advisors;
 
 		System.out.println("Name	    Age	 Amount  Advisor");
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 2; j++) {
-				System.out.println(advisors[i].customers[j].getName() + "   " + advisors[i].customers[j].getAge()
-						+ "     " + advisors[i].customers[j].getTotalAmount() + "   " + advisors[i].getName());
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				
+				
+				
+				if (advisors[i] != null && advisors[i].getCustomers()[j] != null) {
+					System.out.println(advisors[i].getCustomers()[j].getName() + "   "
+							+ advisors[i].getCustomers()[j].getAge() + "     "
+							+ advisors[i].getCustomers()[j].getTotalAmount() + "   " + advisors[i].getName());
+
+				}
 			}
 		}
 	}

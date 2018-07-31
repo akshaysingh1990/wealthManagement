@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Customer extends Person {
 
-	private Double totalAmount;
+	private Double totalAmount = 0.0d;
 	private Account[] accounts;
 	private Advisor advisor;
 	private Long countId = 0L;

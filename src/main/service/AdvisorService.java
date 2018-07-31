@@ -23,7 +23,7 @@ public class AdvisorService implements CommonService {
 		int age = scanner.nextInt();
 		advisor.setAge(age);
 
-		System.out.println(advisor);
+	//	System.out.println(advisor);
 		advisors[wealthUtils.convertLongToInt((advisor.getId()))] = advisor;
 	}
 
@@ -33,9 +33,10 @@ public class AdvisorService implements CommonService {
 		
 		
 		System.out.println("Name	    Age	 Amount" );
-		for(int i = 0; i<2 ; i++)
+		for(int i = 0; i<4 ; i++)
+		{if(advisors[i] != null)	
 		{System.out.println(advisors[i].getName()+ "   "+ advisors[i].getAge()+ "     " +advisors[i].getTotalTransactionAmount()) ;
-		}
+		}}
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {
