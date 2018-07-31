@@ -30,7 +30,12 @@ public class AdvisorService implements CommonService {
 	@Override
 	public void viewAll() {
 		// TODO Auto-generated method stub
-
+		
+		
+		System.out.println("Name	    Age	 Amount" );
+		for(int i = 0; i<2 ; i++)
+		{System.out.println(advisors[i].getName()+ "   "+ advisors[i].getAge()+ "     " +advisors[i].getTotalTransactionAmount()) ;
+		}
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {

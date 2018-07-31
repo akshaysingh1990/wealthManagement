@@ -67,6 +67,8 @@ public class CustomerService implements CommonService {
 	public void viewAll() {
 
 		// view all customer with total amount
+		
+		System.out.println("customer");
 	}
 
 }

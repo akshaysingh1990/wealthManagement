@@ -4,6 +4,7 @@ import main.model.Advisor;
 import main.model.Customer;
 import main.service.AdvisorService;
 import main.service.CustomerService;
+import java.util.Scanner;
 
 public class WealthManagement {
 
@@ -31,9 +32,9 @@ public class WealthManagement {
 		advisor1.setName("advisor 1");
 		advisor1.setTotalTransactionAmount(10000.0d);
 		Advisor advisor2 = new Advisor(2);
-		advisor1.setAge(21);
-		advisor1.setName("advisor 2");
-		advisor1.setTotalTransactionAmount(20000.0d);
+		advisor2.setAge(21);
+		advisor2.setName("advisor 2");
+		advisor2.setTotalTransactionAmount(20000.0d);
 		
 		Customer customer1 = new Customer();
 		customer1.setName("customer 1");
@@ -70,12 +71,21 @@ public class WealthManagement {
 		
 		advisorService.advisors[0] = advisor1;
 		advisorService.advisors[1] = advisor2;
+		System.out.println("Press 1 to view details of all advisors");
+		System.out.println("Press 2 to view details of all customers");
 
-		
-		advisorService.viewAll();
-		customerService.viewAll();
-		
+		Scanner scanner = new Scanner(System.in);
+		int choice = scanner.nextInt();
+		if(choice == 1)
+		{advisorService.viewAll();}
+		else if(choice == 2)
+		{customerService.viewAll();}
+		else
+		{		System.out.println("you enter the wrong details");
+
 		
  	}
 
+
+	}
 }
