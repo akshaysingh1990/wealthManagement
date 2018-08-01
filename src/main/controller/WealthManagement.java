@@ -39,12 +39,14 @@ public class WealthManagement {
 		customer1.setAge(15);
 		customer1.setAdvisor(advisor1);
 		customer1.setTotalAmount(1000d);
-
+		customer1.setId(1L);
+		
 		Customer customer2 = new Customer();
 		customer2.setName("customer 2");
 		customer2.setAge(16);
 		customer2.setAdvisor(advisor1);
 		customer2.setTotalAmount(2000d);
+		customer2.setId(2L);
 
 		Customer customersA[] = new Customer[10];
 		customersA[0] = customer1;
@@ -57,12 +59,14 @@ public class WealthManagement {
 		customer3.setAge(8);
 		customer3.setAdvisor(advisor2);
 		customer3.setTotalAmount(3000d);
+		customer3.setId(1L);
 
 		Customer customer4 = new Customer();
 		customer4.setName("customer 4");
 		customer4.setAge(9);
 		customer4.setAdvisor(advisor2);
 		customer4.setTotalAmount(4000d);
+		customer4.setId(2L);
 
 		Customer customersB[] = new Customer[10];
 		customersB[0] = customer3;

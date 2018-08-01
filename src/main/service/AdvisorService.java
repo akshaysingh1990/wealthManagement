@@ -54,15 +54,8 @@ public class AdvisorService implements CommonService {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
 	public Advisor getAdvisorById(Long advisorId) {
-		return advisors[wealthUtils.convertLongToInt(advisorId)];
+		return advisors[wealthUtils.convertLongToInt(advisorId)-1];
 	}
 
 }

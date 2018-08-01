@@ -7,9 +7,6 @@ public class Advisor extends Person {
 	private Customer[] customers;
 	private Double totalTransactionAmount = 0.0;
 	private static Long countId = 0L;
-	//private int length = .length; 
-	private int totalCustomers = 0;
-	
 	
 	public Advisor(int length) {
 		countId++;
@@ -35,6 +32,7 @@ public class Advisor extends Person {
 	
 	
 	public int totalCustomers() {
+		int totalCustomers =0;
 		for(Customer customer : customers)
 		{
 			if (customer != null) {
