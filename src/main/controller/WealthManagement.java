@@ -49,7 +49,7 @@ public class WealthManagement {
 		Customer customersA[] = new Customer[10];
 		customersA[0] = customer1;
 		customersA[1] = customer2;
-	//	Customer customerAdvisor1[] = { customer1, customer2 };
+		// Customer customerAdvisor1[] = { customer1, customer2 };
 		advisor1.setCustomers(customersA);
 
 		Customer customer3 = new Customer();
@@ -67,10 +67,10 @@ public class WealthManagement {
 		Customer customersB[] = new Customer[10];
 		customersB[0] = customer3;
 		customersB[1] = customer4;
-	//	Customer customerAdvisor1[] = { customer1, customer2 };
+		// Customer customerAdvisor1[] = { customer1, customer2 };
 		advisor2.setCustomers(customersB);
-	//	Customer customerAdvisor2[] = { customer3, customer4 };
-	//	advisor2.setCustomers(customerAdvisor2);
+		// Customer customerAdvisor2[] = { customer3, customer4 };
+		// advisor2.setCustomers(customerAdvisor2);
 
 		// advisorService.advisors[] = {advisor1 , advisor2};
 
@@ -82,8 +82,9 @@ public class WealthManagement {
 			System.out.println("Press 2 to view details of all customers");
 			System.out.println("Press 3 to add details for new advisor");
 			System.out.println("Press 4 to add details for new customers");
-// VERY IMPORTANT NOTE : When you add the new advisor it is not added sequentially at next position(
-//			at [2] it is added on the next place according to indexing done in count++
+			// VERY IMPORTANT NOTE : When you add the new advisor it is not added
+			// sequentially at next position(
+			// at [2] it is added on the next place according to indexing done in count++
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
 			if (choice == 1) {
@@ -99,10 +100,10 @@ public class WealthManagement {
 				System.out.println("you enter the wrong details");
 
 			}
-			System.out.println("Do you want to see details again?(Yes/No)");
+			System.out.println("Press enter to continue the application");
 			scanner.nextLine();
 			String name = scanner.nextLine();
-			if (name.equals("Yes") || name.equals("yes")) {
+			if (name.equals("")) {
 				i++;
 			} else {
 				break;

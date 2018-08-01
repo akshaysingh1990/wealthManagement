@@ -70,17 +70,16 @@ public class CustomerService implements CommonService {
 		// view all customer with total amount
 		Advisor[] advisors = advisorService.advisors;
 
-		System.out.println("Name	    Age	 Amount  Advisor");
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 5; j++) {
-				
-				
-				
-				if (advisors[i] != null && advisors[i].getCustomers()[j] != null) {
-					System.out.println(advisors[i].getCustomers()[j].getName() + "   "
-							+ advisors[i].getCustomers()[j].getAge() + "     "
-							+ advisors[i].getCustomers()[j].getTotalAmount() + "   " + advisors[i].getName());
+		System.out.println("Id		Name   Age	 Amount  Advisor");
+		for (Advisor advisor : advisors) {
+			if (advisor != null) {
+				Customer[] customers = advisor.getCustomers();
+				for (Customer customer : customers) {
+					if (advisor != null && customer != null) {
+						System.out.println(customer.getId() + "	" + customer.getName() + "   " + customer.getAge()
+								+ "     " + customer.getTotalAmount() + "   " + advisor.getName());
 
+					}
 				}
 			}
 		}

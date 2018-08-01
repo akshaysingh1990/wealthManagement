@@ -7,40 +7,41 @@ import main.utils.WealthUtils;
 
 public class AdvisorService implements CommonService {
 
-	public Advisor[]  advisors = new Advisor[10];
-	
+	public Advisor[] advisors = new Advisor[10];
+
 	@Override
 	public void create() {
 		Advisor advisor = new Advisor(5);
 		System.out.println("==========Add Advisor=======");
 		System.out.println("Enter Name");
-		
+
 		Scanner scanner = new Scanner(System.in);
 		String name = scanner.nextLine();
 		advisor.setName(name);
-		
+
 		System.out.println("Enter Age");
 		int age = scanner.nextInt();
 		advisor.setAge(age);
 
-	//	System.out.println(advisor);
-		advisors[wealthUtils.convertLongToInt((advisor.getId()))] = advisor;
+		// System.out.println(advisor);
+		advisors[wealthUtils.convertLongToInt((advisor.getId()-1))] = advisor;
 	}
 
 	@Override
 	public void viewAll() {
 		// TODO Auto-generated method stub
-		
-		
-		System.out.println("Name	    Age	 Amount" );
-		for(int i = 0; i<4 ; i++)
-		{if(advisors[i] != null)	
-		{System.out.println(advisors[i].getName()+ "   "+ advisors[i].getAge()+ "     " +advisors[i].getTotalTransactionAmount()) ;
-		}}
+
+		System.out.println("Id 	Name	    Age	 Amount");
+		for (Advisor advisor : advisors) {
+			if (advisor != null) {
+				System.out.println(
+						advisor.getId()+"	"+advisor.getName() + "   " + advisor.getAge() + "     " + advisor.getTotalTransactionAmount());
+			}
+		}
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {
 		return advisors[wealthUtils.convertLongToInt(advisorId)];
 	}
-	
+
 }
