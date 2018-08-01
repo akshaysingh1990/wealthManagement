@@ -40,8 +40,30 @@ public class AdvisorService implements CommonService {
 		}
 	}
 
+	public void delete() {
+		
+		System.out.println("Enter AdvisorID");
+		Scanner scanner1 = new Scanner(System.in);
+
+		int option1 = scanner1.nextInt();
+		advisors[option1-1] = null;
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	public Advisor getAdvisorById(Long advisorId) {
 		return advisors[wealthUtils.convertLongToInt(advisorId)];
 	}
 
 }
+

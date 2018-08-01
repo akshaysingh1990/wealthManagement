@@ -82,6 +82,8 @@ public class WealthManagement {
 			System.out.println("Press 2 to view details of all customers");
 			System.out.println("Press 3 to add details for new advisor");
 			System.out.println("Press 4 to add details for new customers");
+			System.out.println("Press 5 to delete  advisor");
+			System.out.println("Press 6 to delete  customer");
 			// VERY IMPORTANT NOTE : When you add the new advisor it is not added
 			// sequentially at next position(
 			// at [2] it is added on the next place according to indexing done in count++
@@ -95,8 +97,15 @@ public class WealthManagement {
 				advisorService.create();
 			} else if (choice == 4) {
 				customerService.create();
+			} else if (choice == 5) {
+				
+				
+				advisorService.delete();
+			} else if (choice == 6) {
+				customerService.delete();
+			}
 
-			} else {
+			else {
 				System.out.println("you enter the wrong details");
 
 			}

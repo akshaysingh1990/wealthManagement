@@ -7,10 +7,10 @@ public class Customer extends Person {
 	private Double totalAmount = 0.0d;
 	private Account[] accounts;
 	private Advisor advisor;
-	private static Long countId = 0L;
+	private  Long countId = 0L;
 
 	public Customer() {
-		countId++;
+		countId++;                  /// ENDED UP BEING IRRELEVANT SINCE CANT CREATE THE CUSTOMER ARRAY IN ITSELF
 		this.setId(countId);
 	}
 

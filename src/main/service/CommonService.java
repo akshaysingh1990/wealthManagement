@@ -12,6 +12,9 @@ public interface CommonService {
 	void viewAll();
 	
 	
+	void delete();
+	
+	
 	
 	
 }
