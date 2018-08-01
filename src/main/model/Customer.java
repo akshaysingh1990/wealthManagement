@@ -7,7 +7,7 @@ public class Customer extends Person {
 	private Double totalAmount = 0.0d;
 	private Account[] accounts;
 	private Advisor advisor;
-	private Long countId = 0L;
+	private static Long countId = 0L;
 
 	public Customer() {
 		countId++;

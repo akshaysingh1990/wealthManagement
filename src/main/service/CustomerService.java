@@ -51,7 +51,11 @@ public class CustomerService implements CommonService {
 
 		// update customer in advisor
 		Customer[] customers = advisor.getCustomers();
-		customers[wealthUtils.convertLongToInt(customer.getId())] = customer;
+		
+		
+	//	customers[wealthUtils.convertLongToInt(customer.getId())] = customer;
+		customers[advisor.totalCustomers()] = customer;
+		
 		advisor.setCustomers(customers);
 
 		// update total transaction amount of advisor

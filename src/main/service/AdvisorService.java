@@ -11,7 +11,7 @@ public class AdvisorService implements CommonService {
 
 	@Override
 	public void create() {
-		Advisor advisor = new Advisor(5);
+		Advisor advisor = new Advisor(10);
 		System.out.println("==========Add Advisor=======");
 		System.out.println("Enter Name");
 
