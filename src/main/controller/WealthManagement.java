@@ -40,7 +40,7 @@ public class WealthManagement {
 		customer1.setAdvisor(advisor1);
 		customer1.setTotalAmount(1000d);
 		customer1.setId(1L);
-		
+
 		Customer customer2 = new Customer();
 		customer2.setName("customer 2");
 		customer2.setAge(16);
@@ -88,9 +88,9 @@ public class WealthManagement {
 			System.out.println("Press 4 to add details for new customers");
 			System.out.println("Press 5 to delete  advisor");
 			System.out.println("Press 6 to delete  customer");
-			// VERY IMPORTANT NOTE : When you add the new advisor it is not added
-			// sequentially at next position(
-			// at [2] it is added on the next place according to indexing done in count++
+			System.out.println("Press 7 to edit existing advisor");
+			System.out.println("Press 8 to edit existing customer");
+
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
 			if (choice == 1) {
@@ -102,11 +102,13 @@ public class WealthManagement {
 			} else if (choice == 4) {
 				customerService.create();
 			} else if (choice == 5) {
-				
-				
 				advisorService.delete();
 			} else if (choice == 6) {
 				customerService.delete();
+			} else if (choice == 7) {
+				advisorService.edit();
+			} else if (choice == 8) {
+				customerService.edit();
 			}
 
 			else {

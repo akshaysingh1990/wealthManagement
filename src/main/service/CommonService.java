@@ -14,6 +14,8 @@ public interface CommonService {
 	
 	void delete();
 	
+	void edit();
+	// only editing of name is provided
 	
 	
 	

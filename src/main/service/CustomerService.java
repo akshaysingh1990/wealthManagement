@@ -50,13 +50,13 @@ public class CustomerService implements CommonService {
 		customer.setTotalAmount(totalAmount);
 
 		int totalCustomers = advisor.totalCustomers();
-		customer.setId((long)totalCustomers + 1);
-		
+		customer.setId((long) totalCustomers + 1);
+
 		// update customer in advisor
 		Customer[] customers = advisor.getCustomers();
 
 		// customers[wealthUtils.convertLongToInt(customer.getId())] = customer;
-		customers[wealthUtils.convertLongToInt(customer.getId())-1] = customer;
+		customers[wealthUtils.convertLongToInt(customer.getId()) - 1] = customer;
 
 		advisor.setCustomers(customers);
 
@@ -80,7 +80,7 @@ public class CustomerService implements CommonService {
 		for (Advisor advisor : advisors) {
 			if (advisor != null) {
 				Customer[] customers = advisor.getCustomers();
-				for(Customer customer : customers) {
+				for (Customer customer : customers) {
 					if (advisor != null && customer != null) {
 						System.out.println(customer.getId() + "	" + customer.getName() + "   " + customer.getAge()
 								+ "     " + customer.getTotalAmount() + "   " + advisor.getName());
@@ -92,30 +92,52 @@ public class CustomerService implements CommonService {
 	}
 
 	@Override
+
 	public void delete() {
-		// TODO Auto-generated method stub
-		
+
+		System.out.println("Enter AdvisorID");
+		Advisor[] advisors = advisorService.advisors;
+
+		Scanner scanner2 = new Scanner(System.in);
+		int option2 = scanner2.nextInt();
+		Customer[] customer = advisors[option2 - 1].getCustomers();
+		for (Customer customers : customer) {
+			if (customers != null) {
+				System.out.println(customers.getId() + "	" + customers.getName() + "   " + customers.getAge()
+						+ "     " + customers.getTotalAmount() + "   " + advisors[option2 - 1].getName());
+			}
+		}
+		System.out.println("Enter CustomerID");
+		int option3 = scanner2.nextInt();
+		customer[option3 - 1] = null;
+
 	}
 
-//	public void delete() {
-//
-//		System.out.println("Enter AdvisorID");
-//		Advisor[] advisors = advisorService.advisors;
-//
-//		Scanner scanner2 = new Scanner(System.in);
-//		int option2 = scanner2.nextInt();
-//		Customer[] customer = advisors[option2 - 1].getCustomers();
-//		for (int i =0; i < customer.length; i++) {
-//			if (customer != null) {
-//				System.out.println(i+1 + "	" + customer.getName() + "   " + customer.getAge() + "     "
-//						+ customer.getTotalAmount() + "   " + advisors[option2 - 1].getName());
-//			}
-//		}
-//		System.out.println("Enter CustomerID");
-//		int option3 = scanner2.nextInt();
-//           customer[option3-1] = null;
-//	
-//	
-//	}
+	public void edit() {
+
+		System.out.println("You are only allowed to change the name of Customer");
+
+		System.out.println("Enter AdvisorID");
+		Advisor[] advisors = advisorService.advisors;
+
+		Scanner scanner4 = new Scanner(System.in);
+
+		int option4 = scanner4.nextInt();
+		Customer[] customer = advisors[option4 - 1].getCustomers();
+		for (Customer customers : customer) {
+			if (customers != null) {
+				System.out.println(customers.getId() + "	" + customers.getName() + "   " + customers.getAge()
+						+ "     " + customers.getTotalAmount() + "   " + advisors[option4 - 1].getName());
+			}
+		}
+		System.out.println("Enter CustomerID");
+		int option5 = scanner4.nextInt();
+		System.out.println("Enter name of new customer");
+		scanner4.nextLine();
+		String name4 = scanner4.nextLine();
+
+		customer[option5 - 1].setName(name4);
+
+	}
 
 }
