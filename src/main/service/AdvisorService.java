@@ -8,6 +8,7 @@ import main.utils.WealthUtils;
 public class AdvisorService implements CommonService {
 
 	public Advisor[] advisors = new Advisor[10];
+    private	Scanner scanner = new Scanner(System.in);
 
 	@Override
 	public void create() {
@@ -15,7 +16,7 @@ public class AdvisorService implements CommonService {
 		System.out.println("==========Add Advisor=======");
 		System.out.println("Enter Name");
 
-		Scanner scanner = new Scanner(System.in);
+	//	Scanner scanner = new Scanner(System.in);
 		String name = scanner.nextLine();
 		advisor.setName(name);
 
@@ -43,9 +44,9 @@ public class AdvisorService implements CommonService {
 	public void delete() {
 
 		System.out.println("Enter AdvisorID");
-		Scanner scanner1 = new Scanner(System.in);
+	//	Scanner scanner1 = new Scanner(System.in);
 
-		int option1 = scanner1.nextInt();
+		int option1 = scanner.nextInt();
 		advisors[option1 - 1] = null;
 
 	}
@@ -55,13 +56,13 @@ public class AdvisorService implements CommonService {
 		System.out.println("You are only allowed to change the name of Advisor");
 
 		System.out.println("Enter AdvisorID");
-		Scanner scanner3 = new Scanner(System.in);
+	//	Scanner scanner3 = new Scanner(System.in);
 
-		int option3 = scanner3.nextInt();
+		int option3 = scanner.nextInt();
 
 		System.out.println("Enter name of new advisor");
-		scanner3.nextLine();
-		String name3 = scanner3.nextLine();
+		scanner.nextLine();
+		String name3 = scanner.nextLine();
 
 		advisors[option3 - 1].setName(name3);
 

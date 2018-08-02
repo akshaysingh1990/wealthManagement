@@ -121,7 +121,7 @@ public class WealthManagement {
 			if (name.equals("")) {
 				i++;
 			} else {
-				break;
+				System.exit(0);
 			}
 
 		}

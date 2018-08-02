@@ -14,6 +14,7 @@ public class CustomerService implements CommonService {
 	public CustomerService(AdvisorService advisorService_parameter) {
 		advisorService = advisorService_parameter;
 	}
+	Scanner scanner = new Scanner(System.in);
 
 	@Override
 	public void create() {
@@ -22,7 +23,7 @@ public class CustomerService implements CommonService {
 		System.out.println("==========Add Customer=======");
 		System.out.println("Enter Name");
 
-		Scanner scanner = new Scanner(System.in);
+//		Scanner scanner = new Scanner(System.in);
 		String name = scanner.nextLine();
 		customer.setName(name);
 
@@ -98,8 +99,8 @@ public class CustomerService implements CommonService {
 		System.out.println("Enter AdvisorID");
 		Advisor[] advisors = advisorService.advisors;
 
-		Scanner scanner2 = new Scanner(System.in);
-		int option2 = scanner2.nextInt();
+	//	Scanner scanner2 = new Scanner(System.in);
+		int option2 = scanner.nextInt();
 		Customer[] customer = advisors[option2 - 1].getCustomers();
 		for (Customer customers : customer) {
 			if (customers != null) {
@@ -108,7 +109,7 @@ public class CustomerService implements CommonService {
 			}
 		}
 		System.out.println("Enter CustomerID");
-		int option3 = scanner2.nextInt();
+		int option3 = scanner.nextInt();
 		customer[option3 - 1] = null;
 
 	}
@@ -120,9 +121,9 @@ public class CustomerService implements CommonService {
 		System.out.println("Enter AdvisorID");
 		Advisor[] advisors = advisorService.advisors;
 
-		Scanner scanner4 = new Scanner(System.in);
+//		Scanner scanner4 = new Scanner(System.in);
 
-		int option4 = scanner4.nextInt();
+		int option4 = scanner.nextInt();
 		Customer[] customer = advisors[option4 - 1].getCustomers();
 		for (Customer customers : customer) {
 			if (customers != null) {
@@ -131,10 +132,10 @@ public class CustomerService implements CommonService {
 			}
 		}
 		System.out.println("Enter CustomerID");
-		int option5 = scanner4.nextInt();
+		int option5 = scanner.nextInt();
 		System.out.println("Enter name of new customer");
-		scanner4.nextLine();
-		String name4 = scanner4.nextLine();
+		scanner.nextLine();
+		String name4 = scanner.nextLine();
 
 		customer[option5 - 1].setName(name4);
 
