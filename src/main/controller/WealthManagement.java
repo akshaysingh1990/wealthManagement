@@ -3,7 +3,11 @@ package main.controller;
 import main.model.Advisor;
 import main.model.Customer;
 import main.service.AdvisorService;
+import main.service.CommonService;
 import main.service.CustomerService;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class WealthManagement {
@@ -24,7 +28,12 @@ public class WealthManagement {
 
 		// advisorService.create();
 		// customerService.create();
-
+		
+		
+		
+		String[] listStr = new String[10];
+		
+		
 		Advisor advisor1 = new Advisor(2);
 		advisor1.setAge(20);
 		advisor1.setName("advisor 1");
@@ -67,6 +76,25 @@ public class WealthManagement {
 		customer4.setAdvisor(advisor2);
 		customer4.setTotalAmount(4000d);
 		customer4.setId(2L);
+		
+//		
+//		List<Customer> customerList = new ArrayList<Customer>();
+//		customerList.add(customer1);
+//		customerList.add(customer2);
+//		customerList.add
+//
+//		System.out.println(customerList.indexOf(customer1));
+//		System.out.println(customerList.get(0));
+//		
+//		getCustomerById(int id)
+//		System.out.println(customerList.remove(customer1));
+//		System.out.println(customerList.size());
+//		
+		
+		
+		
+		
+		
 
 		Customer customersB[] = new Customer[10];
 		customersB[0] = customer3;
