@@ -1,5 +1,7 @@
 package main.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import main.model.Advisor;
@@ -7,12 +9,13 @@ import main.utils.WealthUtils;
 
 public class AdvisorService implements CommonService {
 
-	public Advisor[] advisors = new Advisor[10];
+//	public Advisor[] advisors = new Advisor[10];
+	public List<Advisor> advisors = new ArrayList<Advisor>();
     private	Scanner scanner = new Scanner(System.in);
 
 	@Override
 	public void create() {
-		Advisor advisor = new Advisor(10);
+		Advisor advisor = new Advisor();
 		System.out.println("==========Add Advisor=======");
 		System.out.println("Enter Name");
 
@@ -24,8 +27,10 @@ public class AdvisorService implements CommonService {
 		int age = scanner.nextInt();
 		advisor.setAge(age);
 
+		
+		advisors.add(advisor);
 		// System.out.println(advisor);
-		advisors[wealthUtils.convertLongToInt((advisor.getId() - 1))] = advisor;
+	//	advisors[wealthUtils.convertLongToInt((advisor.getId() - 1))] = advisor;
 	}
 
 	@Override
@@ -39,6 +44,7 @@ public class AdvisorService implements CommonService {
 						+ advisor.getTotalTransactionAmount());
 			}
 		}
+	
 	}
 
 	public void delete() {
@@ -47,7 +53,9 @@ public class AdvisorService implements CommonService {
 	//	Scanner scanner1 = new Scanner(System.in);
 
 		int option1 = scanner.nextInt();
-		advisors[option1 - 1] = null;
+		advisors.remove(option1-1);
+		advisors.add(option1 - 1,null);
+	
 
 	}
 
@@ -64,12 +72,12 @@ public class AdvisorService implements CommonService {
 		scanner.nextLine();
 		String name3 = scanner.nextLine();
 
-		advisors[option3 - 1].setName(name3);
+		advisors.get(option3 - 1).setName(name3);
 
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {
-		return advisors[wealthUtils.convertLongToInt(advisorId) - 1];
+		return advisors.get(wealthUtils.convertLongToInt(advisorId) - 1);
 	}
 
 }

@@ -1,24 +1,27 @@
 package main.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Advisor extends Person {
 	
-	private Customer[] customers;
+	private List<Customer> customers = new ArrayList<Customer>();
+	
 	private Double totalTransactionAmount = 0.0;
 	private static Long countId = 0L;
 	
-	public Advisor(int length) {
+	public Advisor() {
 		countId++;
 		this.setId(countId);
-		customers = new Customer[length];
+//		customers = new Customer[length];
 	}	
 
-	public Customer[] getCustomers() {
+	public List<Customer> getCustomers() {
 		return customers;
 	}
 
-	public void setCustomers(Customer[] customers) {
+	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
 
@@ -42,9 +45,9 @@ public class Advisor extends Person {
 		}      return totalCustomers;
 	}
 	@Override
-	public String toString() {
-		return "Advisor [customers=" + Arrays.toString(customers) + ", totalTransactionAmount=" + totalTransactionAmount
-				+ ", Person=" + super.toString() + "]";
+	public String toString() {return null;}
+//		return "Advisor [customers=" + Arrays.toString(customers) + ", totalTransactionAmount=" + totalTransactionAmount
+//				+ ", Person=" + super.toString() + "]";
 	}
 
-}
+

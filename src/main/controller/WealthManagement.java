@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.model.Advisor;
+
 import main.model.Customer;
 import main.service.AdvisorService;
 import main.service.CommonService;
@@ -31,18 +32,25 @@ public class WealthManagement {
 		
 		
 		
-		String[] listStr = new String[10];
 		
 		
-		Advisor advisor1 = new Advisor(2);
+		
+		Advisor advisor1 = new Advisor();
 		advisor1.setAge(20);
 		advisor1.setName("advisor 1");
 		advisor1.setTotalTransactionAmount(10000.0d);
-		Advisor advisor2 = new Advisor(2);
+		Advisor advisor2 = new Advisor();
 		advisor2.setAge(21);
 		advisor2.setName("advisor 2");
 		advisor2.setTotalTransactionAmount(20000.0d);
+		
+		
+		List<Advisor> advisors = new ArrayList<Advisor>();
+	
 
+		
+		
+		
 		Customer customer1 = new Customer();
 		customer1.setName("customer 1");
 		customer1.setAge(15);
@@ -57,11 +65,15 @@ public class WealthManagement {
 		customer2.setTotalAmount(2000d);
 		customer2.setId(2L);
 
-		Customer customersA[] = new Customer[10];
-		customersA[0] = customer1;
-		customersA[1] = customer2;
+	//	Customer customersA[] = new Customer[10];
+	//	customersA[0] = customer1;
+	//	customersA[1] = customer2;
 		// Customer customerAdvisor1[] = { customer1, customer2 };
-		advisor1.setCustomers(customersA);
+		List<Customer> customerListA = new ArrayList<Customer>();
+		customerListA.add(customer1);
+		customerListA.add(customer2);
+		
+		advisor1.setCustomers(customerListA);
 
 		Customer customer3 = new Customer();
 		customer3.setName("customer 3");
@@ -77,6 +89,18 @@ public class WealthManagement {
 		customer4.setTotalAmount(4000d);
 		customer4.setId(2L);
 		
+		List<Customer> customerListB = new ArrayList<Customer>();
+		customerListB.add(customer3);
+		customerListB.add(customer4);
+		
+		advisor2.setCustomers(customerListB);
+		
+		advisors.add(advisor1);
+		advisors.add(advisor2);
+		
+		advisorService.advisors = advisors;
+
+
 //		
 //		List<Customer> customerList = new ArrayList<Customer>();
 //		customerList.add(customer1);
@@ -96,18 +120,18 @@ public class WealthManagement {
 		
 		
 
-		Customer customersB[] = new Customer[10];
-		customersB[0] = customer3;
-		customersB[1] = customer4;
+	//	Customer customersB[] = new Customer[10];
+	//	customersB[0] = customer3;
+	//	customersB[1] = customer4;
 		// Customer customerAdvisor1[] = { customer1, customer2 };
-		advisor2.setCustomers(customersB);
+	//	advisor2.setCustomers(customersB);
 		// Customer customerAdvisor2[] = { customer3, customer4 };
 		// advisor2.setCustomers(customerAdvisor2);
 
 		// advisorService.advisors[] = {advisor1 , advisor2};
 
-		advisorService.advisors[0] = advisor1;
-		advisorService.advisors[1] = advisor2;
+		
+		
 
 		for (int i = 0; i < 100;) {
 			System.out.println("Press 1 to view details of all advisors");
