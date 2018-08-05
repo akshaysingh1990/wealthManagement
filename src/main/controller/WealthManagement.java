@@ -8,8 +8,12 @@ import main.service.CommonService;
 import main.service.CustomerService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class WealthManagement {
 
@@ -30,9 +34,20 @@ public class WealthManagement {
 		// advisorService.create();
 		// customerService.create();
 		
-		
-		
-		
+//		String a = "first";
+//		String b = new String("first");
+//		String c = new String("second");
+//		
+//		System.out.println(a.hashCode());
+//		System.out.println(b.hashCode());
+//		System.out.println(c.hashCode());
+//
+//		
+//		Set<String> listString = new HashSet<>();
+//		listString.add("first");
+//		listString.add("second");
+//		listString.add("first");
+//		System.out.println(listString);
 		
 		
 		Advisor advisor1 = new Advisor();
@@ -46,8 +61,6 @@ public class WealthManagement {
 		
 		
 		List<Advisor> advisors = new ArrayList<Advisor>();
-	
-
 		
 		
 		
@@ -64,6 +77,17 @@ public class WealthManagement {
 		customer2.setAdvisor(advisor1);
 		customer2.setTotalAmount(2000d);
 		customer2.setId(2L);
+		
+//		Map<Long , String> customerMap = new HashMap<>();
+//		customerMap.put(1L, "first");
+//		customerMap.put(1L, "second");
+//		System.out.println(customerMap);
+		
+//
+//		Set<Customer> customerSet = new HashSet<>();
+//		customerSet.add(customer1);
+//		customerSet.add(customer2);
+//		System.out.println(customerSet);
 
 	//	Customer customersA[] = new Customer[10];
 	//	customersA[0] = customer1;
@@ -81,7 +105,7 @@ public class WealthManagement {
 		customer3.setAdvisor(advisor2);
 		customer3.setTotalAmount(3000d);
 		customer3.setId(1L);
-
+		
 		Customer customer4 = new Customer();
 		customer4.setName("customer 4");
 		customer4.setAge(9);
