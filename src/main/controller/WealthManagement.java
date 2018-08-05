@@ -84,20 +84,20 @@ public class WealthManagement {
 //		System.out.println(customerMap);
 		
 
-//		Set<Customer> customerSetA = new HashSet<>();
-//		customerSetA.add(customer1);
-//		customerSetA.add(customer2);
+	Set<Customer> customerSetA = new HashSet<>();
+		customerSetA.add(customer1);
+		customerSetA.add(customer2);
 		
 
 	//	Customer customersA[] = new Customer[10];
 	//	customersA[0] = customer1;
 	//	customersA[1] = customer2;
 		// Customer customerAdvisor1[] = { customer1, customer2 };
-		List<Customer> customerListA = new ArrayList<Customer>();
-		customerListA.add(customer1);
-		customerListA.add(customer2);
+//		List<Customer> customerListA = new ArrayList<Customer>();
+	//	customerListA.add(customer1);
+	//	customerListA.add(customer2);
 		
-		advisor1.setCustomers(customerListA);
+		advisor1.setCustomers(customerSetA);
 
 		Customer customer3 = new Customer();
 		customer3.setName("customer 3");
@@ -113,11 +113,17 @@ public class WealthManagement {
 		customer4.setTotalAmount(4000d);
 		customer4.setId(2L);
 		
-		List<Customer> customerListB = new ArrayList<Customer>();
-		customerListB.add(customer3);
-		customerListB.add(customer4);
+	//	List<Customer> customerListB = new ArrayList<Customer>();
+	//	customerListB.add(customer3);
+	//	customerListB.add(customer4);
 		
-		advisor2.setCustomers(customerListB);
+	//	advisor2.setCustomers(customerListB);
+		
+		Set<Customer> customerSetB = new HashSet<>();
+		customerSetB.add(customer3);
+		customerSetB.add(customer4);
+		
+		advisor2.setCustomers(customerSetB);
 		
 		advisors.add(advisor1);
 		advisors.add(advisor2);

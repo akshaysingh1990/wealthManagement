@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.Map.Entry;
 import main.model.Advisor;
 import main.model.Customer;
@@ -81,7 +82,7 @@ public class AdvisorService implements CommonService {
 	
 	public void getAll() {
 		
-		Map<Advisor, List<Customer> > allInfo = new HashMap<>();
+		Map<Advisor, Set<Customer> > allInfo = new HashMap<>();
 	       for(Advisor advisor : advisors) {
 	    	   allInfo.put(advisor,  advisor.getCustomers());
 	       }
@@ -95,8 +96,8 @@ public class AdvisorService implements CommonService {
 //	    	   System.out.println(advisor.getName()+"	"+customer.getName());
 //	       }
 //	       
-	       for(Map.Entry<Advisor, List<Customer> > entry : allInfo.entrySet()) {
-	    	   List<Customer> customers = entry.getValue();
+	       for(Map.Entry<Advisor, Set<Customer> > entry : allInfo.entrySet()) {
+	    	   Set<Customer> customers = entry.getValue();
 	    	   for (Customer customer : customers) {
 	    	   
 	    	    System.out.println(entry.getKey().getName() + "    " + customer.getName());

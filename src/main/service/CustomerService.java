@@ -2,6 +2,7 @@ package main.service;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import main.model.Account;
 import main.model.Advisor;
@@ -55,7 +56,7 @@ public class CustomerService implements CommonService {
 		customer.setId((long) totalCustomers + 1);
 
 		// update customer in advisor
-		List<Customer>  customers = advisor.getCustomers();
+		Set<Customer>  customers = advisor.getCustomers();
 
 		// customers[wealthUtils.convertLongToInt(customer.getId())] = customer;
 	//	customers[wealthUtils.convertLongToInt(customer.getId()) - 1] = customer;
@@ -81,7 +82,7 @@ public class CustomerService implements CommonService {
 		System.out.println("Id		Name   Age	 Amount  Advisor");
 		for (Advisor advisor : advisors) {
 			if (advisor != null) {
-				List<Customer> customers = advisor.getCustomers();
+				Set<Customer> customers = advisor.getCustomers();
 				for (Customer customer : customers) {
 					if (advisor != null && customer != null) {
 						System.out.println(customer.getId() + "	" + customer.getName() + "   " + customer.getAge()
@@ -102,18 +103,21 @@ public class CustomerService implements CommonService {
 
 	//	Scanner scanner2 = new Scanner(System.in);
 		int option2 = scanner.nextInt();
-		List<Customer> customer = advisors.get(option2 - 1).getCustomers();
-		for (Customer customers : customer) {
+		Set<Customer> customers= advisors.get(option2 - 1).getCustomers();
+		for (Customer customer : customers) {
 			if (customers != null) {
-				System.out.println(customers.getId() + "	" + customers.getName() + "   " + customers.getAge()
-						+ "     " + customers.getTotalAmount() + "   " + advisors.get(option2 - 1).getName());
+				System.out.println(customer.getId() + "	" + customer.getName() + "   " + customer.getAge()
+						+ "     " + customer.getTotalAmount() + "   " + advisors.get(option2 - 1).getName());
 			}
 		}
 		System.out.println("Enter CustomerID");
-		int option3 = scanner.nextInt();
-	
-		customer.remove(option3-1);
-		advisors.add(option3 - 1,null);
+		Long option3 = scanner.nextLong();
+		
+		Advisor a =advisors.get(option2 -1);
+		
+		
+		customers.remove(a.getCustomerById(option3));
+		
 	}
 
 	public void edit() {
@@ -126,7 +130,7 @@ public class CustomerService implements CommonService {
 //		Scanner scanner4 = new Scanner(System.in);
 
 		int option4 = scanner.nextInt();
-		List<Customer> customer = advisors.get(option4 - 1).getCustomers();
+		Set<Customer> customer = advisors.get(option4 - 1).getCustomers();
 		for (Customer customers : customer) {
 			if (customers != null) {
 				System.out.println(customers.getId() + "	" + customers.getName() + "   " + customers.getAge()
@@ -134,12 +138,19 @@ public class CustomerService implements CommonService {
 			}
 		}
 		System.out.println("Enter CustomerID");
-		int option5 = scanner.nextInt();
+		Long option5 = scanner.nextLong();
+		
+		Advisor a = advisors.get(option4 -1);
+		
+		
+		
 		System.out.println("Enter name of new customer");
 		scanner.nextLine();
 		String name4 = scanner.nextLine();
 
-		customer.get(option5 - 1).setName(name4);
+		a.getCustomerById(option5).setName(name4);
+		
+		
 
 	}
 	

@@ -34,6 +34,33 @@ public class Customer extends Person {
 	public void setAdvisor(Advisor advisor) {
 		this.advisor = advisor;
 	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((totalAmount == null) ? 0 : totalAmount.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (totalAmount == null) {
+			if (other.totalAmount != null)
+				return false;
+		} else if (!totalAmount.equals(other.totalAmount))
+			return false;
+		return true;
+	}
 
 	@Override
 	public String toString() {
