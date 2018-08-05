@@ -142,5 +142,9 @@ public class CustomerService implements CommonService {
 		customer.get(option5 - 1).setName(name4);
 
 	}
+	
+	public void getAll() {
+		
+	}
 
 }

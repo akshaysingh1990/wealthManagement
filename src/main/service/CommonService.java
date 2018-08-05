@@ -17,6 +17,8 @@ public interface CommonService {
 	void edit();
 	// only editing of name is provided
 	
+	void getAll();
+	
 	
 	
 }

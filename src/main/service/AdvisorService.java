@@ -1,10 +1,13 @@
 package main.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
-
+import java.util.Map.Entry;
 import main.model.Advisor;
+import main.model.Customer;
 import main.utils.WealthUtils;
 
 public class AdvisorService implements CommonService {
@@ -74,6 +77,32 @@ public class AdvisorService implements CommonService {
 
 		advisors.get(option3 - 1).setName(name3);
 
+	}
+	
+	public void getAll() {
+		
+		Map<Advisor, List<Customer> > allInfo = new HashMap<>();
+	       for(Advisor advisor : advisors) {
+	    	   allInfo.put(advisor,  advisor.getCustomers());
+	       }
+	       
+	       System.out.println("Advisor 	Customer");
+//	       for(Advisor advisor : advisors) {
+//	    	   
+//	    	   List<Customer> customers = allInfo.get(advisor);
+//	    	   for (Customer customer : customers)
+//	    	   {
+//	    	   System.out.println(advisor.getName()+"	"+customer.getName());
+//	       }
+//	       
+	       for(Map.Entry<Advisor, List<Customer> > entry : allInfo.entrySet()) {
+	    	   List<Customer> customers = entry.getValue();
+	    	   for (Customer customer : customers) {
+	    	   
+	    	    System.out.println(entry.getKey().getName() + "    " + customer.getName());
+
+	    	   }
+	       }
 	}
 
 	public Advisor getAdvisorById(Long advisorId) {

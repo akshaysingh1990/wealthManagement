@@ -83,11 +83,11 @@ public class WealthManagement {
 //		customerMap.put(1L, "second");
 //		System.out.println(customerMap);
 		
-//
-//		Set<Customer> customerSet = new HashSet<>();
-//		customerSet.add(customer1);
-//		customerSet.add(customer2);
-//		System.out.println(customerSet);
+
+//		Set<Customer> customerSetA = new HashSet<>();
+//		customerSetA.add(customer1);
+//		customerSetA.add(customer2);
+		
 
 	//	Customer customersA[] = new Customer[10];
 	//	customersA[0] = customer1;
@@ -166,6 +166,7 @@ public class WealthManagement {
 			System.out.println("Press 6 to delete  customer");
 			System.out.println("Press 7 to edit existing advisor");
 			System.out.println("Press 8 to edit existing customer");
+			System.out.println("Press 9 to get all info");
 
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
@@ -186,7 +187,9 @@ public class WealthManagement {
 			} else if (choice == 8) {
 				customerService.edit();
 			}
-
+			else if (choice == 9) {
+				advisorService.getAll();
+			}
 			else {
 				System.out.println("you enter the wrong details");
 
